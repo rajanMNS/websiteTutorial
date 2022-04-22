@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -11,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Chain App Dev - App Landing Page HTML5 Template</title>
 
   <!-- Bootstrap core CSS -->
@@ -361,12 +362,31 @@ https://templatemo.com/tm-570-chain-app-dev
 
   <script type="text/javascript">
     function demo() {
+      Swal.fire({
+        title: 'Do you want to purchase?',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Pay',
+        denyButtonText: `Cancel`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Purchase successful!', '', 'success')
+        } else if (result.isDenied) {
+          Swal.fire('Purchase failed!', '', 'error')
+        }
+      })
+
+    }
+  </script>
+
+  <!-- <script type="text/javascript">
+    function demo() {
       document.querySelector('#btnChangeBg').addEventListener('click', () => {
         Confirm.open({
           title: 'Background Change',
           message: 'Are you sure you wish the background color?',
           onok: () => {
-            document.body.style.backgroundColor = 'blue';
+            this._close(confirmEl);
           }
         })
       });
@@ -439,7 +459,7 @@ https://templatemo.com/tm-570-chain-app-dev
       };
 
     }
-  </script>
+  </script> -->
 
   <div id="clients" class="the-clients">
     <div class="container">

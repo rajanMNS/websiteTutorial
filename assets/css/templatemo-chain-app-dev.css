@@ -2077,7 +2077,7 @@ responsive
   padding: 10px;
   box-sizing: border-box;
 
-  opacity: 0;
+  opacity: 100;
   animation-name: confirm---open;
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
